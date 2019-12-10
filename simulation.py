@@ -1,19 +1,19 @@
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-From Prt import Prt
+from Prt import Prt
 
 def run_simulation(n_steps, mu):
 
     n_particles_initial = 50
-    n_particles_new = 3
+    n_particles_new = 10
     lx = 10
     ly = 20
 
     particles = []
     for i in range(n_particles_initial):
         px_init = random.uniform(-1,1)
-        particles.append(Particle(px_init,0,lx,ly))
+        particles.append(Prt(px_init,0,lx,ly))
 
     n_detected = 0
 
@@ -22,7 +22,7 @@ def run_simulation(n_steps, mu):
         for p in particles:
             p.update_pos(mu)
 
-            if p.is_detected():
+            if p.is_detected:
                 n_detected += 1
 
         # remove dead particles
@@ -32,12 +32,12 @@ def run_simulation(n_steps, mu):
         # add new particles at each time step
         for i in range(n_particles_new):
             px_init = random.uniform(-1,1)
-            particles.append(Particle(px_init,py_init,lx,ly))
+            particles.append(Prt(px_init,0,lx,ly))
 
     return n_detected
 
 
-n_steps = 10
+n_steps = 100
 
 # create different mu values
 fs = 50 # sample rate 

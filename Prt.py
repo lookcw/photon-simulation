@@ -30,7 +30,7 @@ class Prt:
         else:
             angle_thresh = exp(-u/2)
             if rand < angle_thresh:
-                (self.vx,self.vy) = choose_new_angle(50)
+                (self.vx,self.vy) = choose_new_angle(self.vx, self.vy,50)
             self._take_step()
         
             
