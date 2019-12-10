@@ -1,6 +1,7 @@
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+From Prt import Prt
 
 def run_simulation(n_steps, mu):
 
