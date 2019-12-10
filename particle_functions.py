@@ -8,9 +8,9 @@ def choose_new_angle(Vx,Vy,std):
 	refraction = np.random.normal(loc=mu, scale=std, size=None)
 
 	new_angle = old_angle + refraction
-	new_angle = np.radians(new_angle)
+	new_angle_rad = np.radians(new_angle)
 
-	newVx = 1.0*np.cos(new_angle)
-	newVy = 1.0*np.sin(new_angle)
+	newVx = 1.0*np.cos(new_angle_rad)
+	newVy = 1.0*np.sin(new_angle_rad)
 	
-	return (newVx,newVy)
+	return (newVx,newVy,new_angle)

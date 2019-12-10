@@ -7,7 +7,7 @@ class Prt:
     def __init__(self,px,py,lx,ly):
         self.lx, self.ly = lx,ly
         self.px, self.py = px , py
-        (self.vx,self.vy) = choose_new_angle(0,1,50)
+        (self.vx,self.vy,self.angle) = choose_new_angle(0,1,30)
         self.is_dead = False
         self.is_detected = False
 
@@ -30,7 +30,7 @@ class Prt:
         else:
             angle_thresh = exp(-u/2)
             if rand < angle_thresh:
-                (self.vx,self.vy) = choose_new_angle(self.vx, self.vy,50)
+                (self.vx,self.vy,self.angle) = choose_new_angle(self.vx, self.vy,50)
             self._take_step()
         
             
